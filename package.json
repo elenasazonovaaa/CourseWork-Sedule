@@ -1,0 +1,22 @@
+{
+  "name": "CourseWork",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "awilix": "^3.0.6",
+    "bcryptjs": "^2.4.3",
+    "passport": "^0.4.0",
+    "jsonwebtoken": "^8.2.1",
+    "body-parser": "^1.18.2",
+    "config": "^1.30.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "joi": "^13.1.2",
+    "moment": "^2.19.3",
+    "mysql2": "1.5.1",
+    "sequelize": "4.23.4",
+    "winston": "^2.4.0"
+  }
+}
