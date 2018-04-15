@@ -1,0 +1,12 @@
+[
+  {
+    "task": "bench press",
+    "sets": 4,
+    "repeats": 15
+  },
+  {
+    "task": "dumbbells bench press",
+    "sets": 5,
+    "repeats": 15
+  }
+]

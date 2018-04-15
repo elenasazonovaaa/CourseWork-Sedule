@@ -4,7 +4,7 @@ const tempData = require('./helpers/tempData.helper');
 
 module.exports = async (container) => {
   await container.resolve('context').sequelize.sync({force: true});
-  //await tempData(container.resolve('context'));
+  await tempData(container.resolve('context'));
 
   const app = express();
 
