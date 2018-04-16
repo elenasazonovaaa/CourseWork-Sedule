@@ -1,26 +1,22 @@
 const CrudController = require('./crud.controller');
 
-class SheduleController extends CrudController {
-    constructor({sheduleService, trainingTaskController, mealTaskController, dayTaskController, entityCheckerMiddleware}){
-        super(sheduleService);
-
-        this.router.use('/:sheduleId/training-tasks',entityCheckerMiddleware, trainingTaskController.router);
-        this.router.use('/:sheduleId/meal-tasks',entityCheckerMiddleware, mealTaskController.router);
-        this.router.use('/:sheduleId/day-tasks',entityCheckerMiddleware, dayTaskController.router);
+class MealTaskController extends CrudController {
+    constructor({mealTaskService}){
+        super(mealTaskService);
 
         this.registerRoutes();
     }
 
     async readAll(req,res){
         let data = await this.service.readChunk(req.query,{
-            userId: req.params.userId
+            sheduleId: req.params.sheduleId
         });
         res.json(data);
     }
 
     async read(req,res){
         let data = await this.service.readChunk(req.query,{
-            userId: req.params.userId,
+            sheduleId: req.params.sheduleId,
             id: req.params.id
         }, true);
         res.json(data);
@@ -28,23 +24,23 @@ class SheduleController extends CrudController {
 
     async create(req, res){
         let data = req.body;
-        data.userId = req.params.userId;
+        data.sheduleId = req.params.sheduleId;
         res.json( await this.service.create(data));
     }
 
     async update(req,res){
         res.json( await this.service.update({
             id: req.params.id,
-            userId: req.params.userId
+            sheduleId: req.params.sheduleId
         }, req.body))
     }
 
     async delete (req,res){
         res.json( await this.service.delete({
             id: req.params.id,
-            userId: req.params.userId
+            sheduleId: req.params.sheduleId
         }))
     }
 }
 
-module.exports = SheduleController;
+module.exports = MealTaskController;
