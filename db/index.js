@@ -10,19 +10,19 @@ module.exports =  ({Sequelize}) => {
     const TrainingTasks = trainingTask(Sequelize,sequelize);
     const Events = event(Sequelize,sequelize);
 
-    Users.hasMany(Shedules, {foreignKey:'userId'});
+    Users.hasMany(Shedules, {onDelete: 'cascade', foreignKey:'userId'});
     Shedules.belongsTo(Users, {foreignKey:'userId'});
 
-    Users.hasMany(Events, {foreignKey:'userId'});
+    Users.hasMany(Events, {onDelete: 'cascade', foreignKey:'userId'});
     Events.belongsTo(Users, {foreignKey:'userId'});
 
-    Shedules.hasMany(DayTasks, {foreignKey:'sheduleId'});
+    Shedules.hasMany(DayTasks, {onDelete: 'cascade', foreignKey:'sheduleId'});
     DayTasks.belongsTo(Shedules, {foreignKey:'sheduleId'});
 
-    Shedules.hasMany(MealTasks, {foreignKey:'sheduleId'});
+    Shedules.hasMany(MealTasks, {onDelete: 'cascade', foreignKey:'sheduleId'});
     MealTasks.belongsTo(Shedules, {foreignKey:'sheduleId'});
 
-    Shedules.hasMany(TrainingTasks, {foreignKey:'sheduleId'});
+    Shedules.hasMany(TrainingTasks, {onDelete: 'cascade', foreignKey:'sheduleId'});
     TrainingTasks.belongsTo(Shedules, {foreignKey:'sheduleId'});
 
   return {

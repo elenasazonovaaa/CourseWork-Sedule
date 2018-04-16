@@ -11,6 +11,7 @@ module.exports = () => {
     ['services/*.js', {register: asClass}],
     ['controllers/routes/*.js', {register: asClass}],
     ['global-controllers/*.js', {register: asFunction}],
+    ['middlewares/*.js', {register: asFunction}],
     ['schemas/*.js', {register: asFunction}]
   ], {
     formatName: 'camelCase',

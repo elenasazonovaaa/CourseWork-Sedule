@@ -6,8 +6,8 @@ module.exports = (Sequelize, sequelize) => {
             type: Sequelize.INTEGER
         },
         name: {type: Sequelize.STRING},
-        comment: {type: Sequelize.INTEGER},
-        date: {type: Sequelize.INTEGER},
+        comment: {type: Sequelize.STRING},
+        date: {type: Sequelize.DOUBLE},
         repeat: {type: Sequelize.ENUM('Daily','Monthly','Yearly','Unrepeatable')}
     });
 };

@@ -10,7 +10,7 @@ module.exports = (Sequelize, sequelize) => {
         password: {type: Sequelize.STRING}
     }, {
         hooks: {
-            beforeCreate: (user, options) =>{
+            beforeSave: (user, options) =>{
                 return bcrypt.genSalt(11)
                     .then(function (salt){
                         return bcrypt.hash(user.password, salt);

@@ -1,4 +1,5 @@
 const {Router} = require('express');
+const wrap = require('../../helpers/wrap.helper');
 
 class CrudController {
   constructor (service) {

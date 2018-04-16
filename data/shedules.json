@@ -1,6 +1,7 @@
 [
     {
         "name":"Upper body training",
-        "type":"Training"
+        "type":"Training",
+        "isActive": true
     }
 ]

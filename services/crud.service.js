@@ -1,5 +1,5 @@
 const validator = require('../helpers/validator.helper');
-const {normalizeLimit}  = require('../helpers/paginator.helper');
+const normalizeLimit = require('../helpers/paginator.helper');
 
 class CrudService {
   constructor (repository, schema, errors) {
@@ -76,7 +76,7 @@ class CrudService {
 
     await this.repository.update(data, {where, limit: 1});
 
-    return this.read(where.id);
+    return this.repository.findAll({where});
   }
 
   async delete (where) {

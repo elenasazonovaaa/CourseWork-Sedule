@@ -6,6 +6,7 @@ module.exports = (Sequelize, sequelize) => {
             type: Sequelize.INTEGER
         },
         name: {type: Sequelize.STRING},
-        type: {type: Sequelize.ENUM('Day','Meal','Training')}
+        type: {type: Sequelize.ENUM('Day','Meal','Training')},
+        isActive: {type: Sequelize.BOOLEAN}
     });
 };

@@ -7,8 +7,8 @@ module.exports = async (container) => {
   await tempData(container.resolve('context'));
 
   const app = express();
-
   app.use(bodyParser.json());
+
 
   app.use('/api',
     container.resolve('loggerGlobal'),
